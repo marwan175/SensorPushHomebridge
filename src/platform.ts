@@ -12,6 +12,9 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
   private api_client!: SensorPushApi;
   private pollingInterval: ReturnType<typeof setInterval> | null = null;
   private updateInterval!: number;
+  private sensorMetadataCache: Record<string, Sensor> = {};
+  private pollingCycleCount: number = 0;
+  private readonly METADATA_REFRESH_CYCLES = 10;
 
   constructor(
     public readonly log: Logger,
@@ -42,7 +45,7 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
     }
 
     this.api.on('didFinishLaunching', () => {
-      log.debug('Executed didFinishLaunching callback');
+      this.log.debug('Executed didFinishLaunching callback');
       this.discoverDevices();
     });
   }
@@ -59,6 +62,8 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
       await this.api_client.authenticate();
 
       const sensors = await this.api_client.getSensors();
+      this.sensorMetadataCache = sensors;
+      
       const sensorIds = Object.keys(sensors);
 
       this.log.info(`Found ${sensorIds.length} sensor(s)`);
@@ -91,6 +96,7 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
           this.sensorAccessories.set(sensor.id, accessoryInstance);
 
           this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
+          this.accessories.push(accessory);
         }
       }
 
@@ -117,13 +123,35 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
       clearInterval(this.pollingInterval);
     }
 
-    this.updateSensorData();
+    this.pollingCycleCount = 0;
 
     this.pollingInterval = setInterval(() => {
-      this.updateSensorData();
+      this.poll();
     }, this.updateInterval);
 
     this.log.info(`Started polling every ${this.updateInterval / 1000} seconds`);
+    this.log.info(`Metadata refresh every ${this.METADATA_REFRESH_CYCLES} cycles (~${this.METADATA_REFRESH_CYCLES} minutes)`);
+  }
+
+  async poll() {
+    this.pollingCycleCount++;
+
+    if (this.pollingCycleCount % this.METADATA_REFRESH_CYCLES === 0) {
+      this.log.debug(`Cycle ${this.pollingCycleCount}: refreshing metadata`);
+      await this.refreshMetadata();
+    } else {
+      this.log.debug(`Cycle ${this.pollingCycleCount}: updating sensor data`);
+      await this.updateSensorData();
+    }
+  }
+
+  async refreshMetadata() {
+    try {
+      this.log.debug('Refreshing sensor metadata cache');
+      this.sensorMetadataCache = await this.api_client.getSensors();
+    } catch (error) {
+      this.log.error('Failed to refresh sensor metadata:', error);
+    }
   }
 
   async updateSensorData() {
@@ -147,8 +175,7 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
             const tempCelsius = (latestSample.temperature - 32) * 5 / 9;
             const humidity = latestSample.humidity;
 
-            const sensors = await this.api_client.getSensors();
-            const sensorInfo = sensors[sensorId];
+            const sensorInfo = this.sensorMetadataCache[sensorId];
             const batteryVoltage = sensorInfo?.battery_voltage;
 
             accessory.updateValues(tempCelsius, humidity, batteryVoltage);
