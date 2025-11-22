@@ -85,9 +85,9 @@ export class SensorPushAccessory {
     if (batteryVoltage !== undefined && this.batteryService) {
       const minVoltage = 2.0;
       const maxVoltage = 3.0;
-      this.batteryLevel = Math.max(0, Math.min(100, 
+      this.batteryLevel = Math.max(0, Math.min(100,
         ((batteryVoltage - minVoltage) / (maxVoltage - minVoltage)) * 100));
-      
+
       this.lowBattery = this.batteryLevel < 20;
 
       this.batteryService.updateCharacteristic(

@@ -55,7 +55,7 @@ export class SensorPushApi {
   async authenticate(): Promise<void> {
     try {
       this.log.debug('Authenticating with SensorPush API...');
-      
+
       const authResponse = await this.client.post('/oauth/authorize', {
         email: this.config.email,
         password: this.config.password,

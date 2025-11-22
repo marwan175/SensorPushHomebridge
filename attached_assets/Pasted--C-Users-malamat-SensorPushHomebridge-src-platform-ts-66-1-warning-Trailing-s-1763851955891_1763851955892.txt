@@ -1,0 +1,71 @@
+=============
+
+C:\Users\malamat\SensorPushHomebridge\src\platform.ts
+   66:1  warning  Trailing spaces not allowed  no-trailing-spaces
+  160:1  warning  Trailing spaces not allowed  no-trailing-spaces
+  169:1  warning  Trailing spaces not allowed  no-trailing-spaces
+
+C:\Users\malamat\SensorPushHomebridge\src\platformAccessory.ts
+  88:52  warning  Trailing spaces not allowed  no-trailing-spaces
+  90:1   warning  Trailing spaces not allowed  no-trailing-spaces
+
+C:\Users\malamat\SensorPushHomebridge\src\sensorPushApi.ts
+  58:1  warning  Trailing spaces not allowed  no-trailing-spaces
+
+C:\Users\malamat\SensorPushHomebridge\src\test-plugin.ts
+   13:51  warning  Unexpected console statement  no-console
+   14:50  warning  Unexpected console statement  no-console
+   15:50  warning  Unexpected console statement  no-console
+   16:51  warning  Unexpected console statement  no-console
+   17:53  warning  Unexpected console statement  no-console
+   18:64  warning  Unexpected console statement  no-console
+   22:3   warning  Unexpected console statement  no-console
+   23:3   warning  Unexpected console statement  no-console
+   24:3   warning  Unexpected console statement  no-console
+   25:3   warning  Unexpected console statement  no-console
+   31:5   warning  Unexpected console statement  no-console
+   38:5   warning  Unexpected console statement  no-console
+   40:5   warning  Unexpected console statement  no-console
+   42:5   warning  Unexpected console statement  no-console
+   45:5   warning  Unexpected console statement  no-console
+   48:7   warning  Unexpected console statement  no-console
+   49:7   warning  Unexpected console statement  no-console
+   53:5   warning  Unexpected console statement  no-console
+   54:5   warning  Unexpected console statement  no-console
+   57:7   warning  Unexpected console statement  no-console
+   58:7   warning  Unexpected console statement  no-console
+   59:7   warning  Unexpected console statement  no-console
+   61:9   warning  Unexpected console statement  no-console
+   64:5   warning  Unexpected console statement  no-console
+   66:5   warning  Unexpected console statement  no-console
+   68:5   warning  Unexpected console statement  no-console
+   70:5   warning  Unexpected console statement  no-console
+   71:5   warning  Unexpected console statement  no-console
+   75:1   warning  Trailing spaces not allowed   no-trailing-spaces
+   86:11  warning  Unexpected console statement  no-console
+   87:11  warning  Unexpected console statement  no-console
+   88:11  warning  Unexpected console statement  no-console
+   89:11  warning  Unexpected console statement  no-console
+   92:9   warning  Unexpected console statement  no-console
+   95:5   warning  Unexpected console statement  no-console
+   97:5   warning  Unexpected console statement  no-console
+  100:5   warning  Unexpected console statement  no-console
+  103:7   warning  Unexpected console statement  no-console
+  104:7   warning  Unexpected console statement  no-console
+  108:9   warning  Unexpected console statement  no-console
+  109:9   warning  Unexpected console statement  no-console
+  110:9   warning  Unexpected console statement  no-console
+  112:7   warning  Unexpected console statement  no-console
+  115:5   warning  Unexpected console statement  no-console
+  116:5   warning  Unexpected console statement  no-console
+  117:5   warning  Unexpected console statement  no-console
+  118:5   warning  Unexpected console statement  no-console
+  119:5   warning  Unexpected console statement  no-console
+  122:5   warning  Unexpected console statement  no-console
+  124:7   warning  Unexpected console statement  no-console
+  126:9   warning  Unexpected console statement  no-console
+  127:9   warning  Unexpected console statement  no-console
+  130:7   warning  Unexpected console statement  no-console
+
+✖ 59 problems (0 errors, 59 warnings)
+  0 errors and 7 warnings potentially fixable with the `--fix` option.

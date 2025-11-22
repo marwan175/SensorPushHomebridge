@@ -63,7 +63,7 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
 
       const sensors = await this.api_client.getSensors();
       this.sensorMetadataCache = sensors;
-      
+
       const sensorIds = Object.keys(sensors);
 
       this.log.info(`Found ${sensorIds.length} sensor(s)`);
@@ -157,7 +157,7 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
   async updateSensorData() {
     try {
       const sensorIds = Array.from(this.sensorAccessories.keys());
-      
+
       if (sensorIds.length === 0) {
         return;
       }
@@ -166,7 +166,7 @@ export class SensorPushPlatform implements DynamicPlatformPlugin {
 
       for (const [sensorId, accessory] of this.sensorAccessories.entries()) {
         const sensorData = samples[sensorId];
-        
+
         if (sensorData) {
           const latestTimestamp = Object.keys(sensorData).sort().reverse()[0];
           const latestSample = sensorData[latestTimestamp];
