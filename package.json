@@ -4,12 +4,13 @@
   "version": "1.0.0",
   "description": "A Homebridge plugin for SensorPush temperature and humidity sensors",
   "license": "Apache-2.0",
+  "author": "Marwan Alamat",
   "repository": {
     "type": "git",
-    "url": "https://github.com/USERNAME/homebridge-sensorpush.git"
+    "url": "https://github.com/marwan175/SensorPushHomebridge.git"
   },
   "bugs": {
-    "url": "https://github.com/USERNAME/homebridge-sensorpush/issues"
+    "url": "https://github.com/marwan175/SensorPushHomebridge/issues"
   },
   "engines": {
     "node": ">=18.0.0",
