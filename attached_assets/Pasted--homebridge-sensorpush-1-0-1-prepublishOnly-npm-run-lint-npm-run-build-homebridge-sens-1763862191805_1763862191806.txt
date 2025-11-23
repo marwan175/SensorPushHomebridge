@@ -1,0 +1,81 @@
+> homebridge-sensorpush@1.0.1 prepublishOnly
+> npm run lint && npm run build
+
+
+> homebridge-sensorpush@1.0.1 lint
+> eslint src/index.ts src/platform.ts src/platformAccessory.ts src/sensorPushApi.ts src/settings.ts --max-warnings=0
+
+=============
+
+WARNING: You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.
+
+You may find that it works just fine, or you may not.
+
+SUPPORTED TYPESCRIPT VERSIONS: >=4.3.5 <5.4.0
+
+YOUR TYPESCRIPT VERSION: 5.9.3
+
+Please only submit bug reports when using the officially supported version.
+
+=============
+
+> homebridge-sensorpush@1.0.1 build
+> rimraf ./dist && tsc
+
+npm warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+npm warn publish errors corrected:
+npm warn publish "repository.url" was normalized to "git+https://github.com/marwan175/SensorPushHomebridge.git"
+npm notice
+npm notice 📦  homebridge-sensorpush@1.0.1
+npm notice Tarball Contents
+npm notice 453B .replit
+npm notice 5.1kB README.md
+npm notice 4.0kB attached_assets/Pasted--C-Users-malamat-SensorPushHomebridge-src-platform-ts-66-1-warning-Trailing-s-1763851955891_1763851955892.txt
+npm notice 1.5kB config.schema.json
+npm notice 132B dist/index.d.ts
+npm notice 172B dist/index.d.ts.map
+npm notice 245B dist/index.js
+npm notice 231B dist/index.js.map
+npm notice 986B dist/platform.d.ts
+npm notice 794B dist/platform.d.ts.map
+npm notice 7.2kB dist/platform.js
+npm notice 6.3kB dist/platform.js.map
+npm notice 942B dist/platformAccessory.d.ts
+npm notice 881B dist/platformAccessory.d.ts.map
+npm notice 4.0kB dist/platformAccessory.js
+npm notice 3.7kB dist/platformAccessory.js.map
+npm notice 1.2kB dist/sensorPushApi.d.ts
+npm notice 1.3kB dist/sensorPushApi.d.ts.map
+npm notice 4.4kB dist/sensorPushApi.js
+npm notice 3.7kB dist/sensorPushApi.js.map
+npm notice 330B dist/settings.d.ts
+npm notice 272B dist/settings.d.ts.map
+npm notice 499B dist/settings.js
+npm notice 302B dist/settings.js.map
+npm notice 52B dist/test-plugin.d.ts
+npm notice 116B dist/test-plugin.d.ts.map
+npm notice 5.2kB dist/test-plugin.js
+npm notice 5.5kB dist/test-plugin.js.map
+npm notice 346B example-config.json
+npm notice 1.4kB package.json
+npm notice 4.1kB replit.md
+npm notice Tarball Details
+npm notice name: homebridge-sensorpush
+npm notice version: 1.0.1
+npm notice filename: homebridge-sensorpush-1.0.1.tgz
+npm notice package size: 15.7 kB
+npm notice unpacked size: 65.3 kB
+npm notice shasum: cf776bb0302337d71808308a99aa317ba322978d
+npm notice integrity: sha512-MCYzdw6qfazIQ[...]68dCfmNJeGi4w==
+npm notice total files: 31
+npm notice
+npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
++ homebridge-sensorpush@1.0.1
+
+malamat@WCULAP-COTF-129 MINGW64 ~/SensorPushhomebridge (main)
+$ npm install -g homebridge-sensorpush
+
+added 24 packages, and changed 1 package in 2s
+
+6 packages are looking for funding
+  run `npm fund` for details

@@ -1,13 +1,13 @@
 {
   "displayName": "Homebridge SensorPush",
   "name": "homebridge-sensorpush",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A Homebridge plugin for SensorPush temperature and humidity sensors",
   "license": "Apache-2.0",
   "author": "Marwan Alamat",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marwan175/SensorPushHomebridge.git"
+    "url": "git+https://github.com/marwan175/SensorPushHomebridge.git"
   },
   "bugs": {
     "url": "https://github.com/marwan175/SensorPushHomebridge/issues"
@@ -17,6 +17,10 @@
     "homebridge": ">=1.6.0"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "config.schema.json"
+  ],
   "scripts": {
     "lint": "eslint src/index.ts src/platform.ts src/platformAccessory.ts src/sensorPushApi.ts src/settings.ts --max-warnings=0",
     "watch": "npm run build && npm link && nodemon",
