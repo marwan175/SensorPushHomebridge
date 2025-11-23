@@ -5,3 +5,6 @@ tsconfig.json
 nodemon.json
 .eslintrc.json
 .gitignore
+.replit
+replit.md
+attached_assets/
