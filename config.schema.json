@@ -8,20 +8,17 @@
       "name": {
         "title": "Name",
         "type": "string",
-        "required": true,
         "default": "SensorPush"
       },
       "email": {
         "title": "Email",
         "type": "string",
-        "required": true,
         "format": "email",
         "description": "Your SensorPush account email address"
       },
       "password": {
         "title": "Password",
         "type": "string",
-        "required": true,
         "description": "Your SensorPush account password"
       },
       "pollingInterval": {
@@ -31,7 +28,8 @@
         "minimum": 60000,
         "description": "How often to poll for sensor data (minimum 60000ms due to API rate limits)"
       }
-    }
+    },
+    "required": ["name", "email", "password"]
   },
   "layout": [
     {
