@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge SensorPush",
   "name": "homebridge-sensorpush",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Homebridge plugin for SensorPush temperature and humidity sensors",
   "license": "Apache-2.0",
   "author": "Marwan Alamat",
